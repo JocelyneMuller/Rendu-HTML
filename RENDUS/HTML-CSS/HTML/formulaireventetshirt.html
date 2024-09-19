@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulaire vente de t-shirts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #555; 
+            font-size: 16px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+
+    </style>
+  </head>
+  <body>
+    <h1>Formulaire commande de t-shirts</h1>
+    <form action="submit_form" method="post">
+
+        <fieldset>
+        <legend>Coordonnées du client</legend>
+
+        <div>
+            <label for="Nom">Nom (en majuscules) :</label>
+            <input type="text" id="Nom" name="Nom" pattern="[A-Z]+" title="Entrer uniquement des lettres majuscules" required>
+        </div>
+
+        <div>
+            <label for="Prénom">Prénom :</label>
+            <input type="text" id="Prénom" name="Prénom" pattern="[A-Z][a-z]+" title="Entrer la première lettre majuscule" required>
+        </div>
+
+        <div>
+            <label for="adresse">Adresse :</label>
+            <input type="text" id="adresse" name="adresse" required>
+        </div>
+
+        <div>
+            <label for="Code postal">Code postal :</label>
+            <input type="text" id="code postal" name="code postal" pattern="\d{5}" title="Entrer un code postal" required>
+        </div>
+
+        <div>
+            <label for="pays">Pays :</label>
+            <select id="pays" name="Pays" title="pays" required>
+                <option value="france">France</option>
+            </select>
+        </div>
+        </fieldset>
+
+        <fieldset>
+            <div>
+                <legend>Détails de la commande</legend>
+                <label for="modèle">Modèle :</label>
+                <select id="modèle" name="modèle">
+                    <option value="Road 66">Road 66</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="quantité">quantité :</label>
+                <input type="text" id="quantité" name="quantité" min="1" max="165" step="3" value="1" required>
+            </div>
+        </fieldset>
+
+        <div>
+            <button type="submit">Commander</button>
+            <button type="submit">Recommencer</button>
+        </div>
+    </form>
+  </body>
+</html>
